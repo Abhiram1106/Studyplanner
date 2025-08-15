@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Countdown & Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Exam Countdown & Study Planner</h1>
+            <p>Organize your study schedule effectively</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Create New Study Plan</h2>
+                <form id="studyForm">
+                    <div class="form-group">
+                        <label for="examName">Exam Name:</label>
+                        <input type="text" id="examName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="examDate">Exam Date:</label>
+                        <input type="date" id="examDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studyHours">Daily Study Hours:</label>
+                        <input type="number" id="studyHours" min="1" max="24" value="2" required>
+                    </div>
+                    
+                    <div id="topicsContainer">
+                        <div class="topic-group">
+                            <div class="form-group">
+                                <label>Topic:</label>
+                                <input type="text" class="topic" placeholder="e.g. Mathematics" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Sub-topics (comma separated):</label>
+                                <input type="text" class="subtopics" placeholder="e.g. Algebra, Geometry, Calculus">
+                            </div>
+                            <div class="form-group">
+                                <label>Hours Needed:</label>
+                                <input type="number" class="hoursNeeded" min="1" value="5" required>
+                            </div>
+                            <button type="button" class="remove-topic-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="addTopicBtn" class="btn secondary">Add Another Topic</button>
+                    <button type="submit" class="btn primary">Generate Study Plan</button>
+                </form>
+            </section>
+
+            <section class="plans-section">
+                <h2>Your Study Plans</h2>
+                <button id="togglePlansBtn" class="btn secondary">Show Previous Plans</button>
+                <div id="plansContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="alert">
+        <i class="fas fa-check-circle"></i>
+        <span>Study plan generated successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
